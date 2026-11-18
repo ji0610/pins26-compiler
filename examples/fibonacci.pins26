@@ -1,0 +1,31 @@
+// Recursive Fibonacci numbers.
+
+fun putint(n)
+fun putstr(s)
+
+fun fib(n) =
+    let
+        var result = 0
+    in
+        if n <= 1 then
+            result = n;
+        else
+            result = fib(n - 1) + fib(n - 2);
+        end;
+        result;
+    end;
+
+fun main() =
+    let
+        var i = 0
+    in
+        while i < 15 do
+            if i > 0 then
+                putstr(" ");
+            end;
+            putint(fib(i));
+            i = i + 1;
+        end;
+        putstr("\n");
+        0;
+    end;

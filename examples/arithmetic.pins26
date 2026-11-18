@@ -1,0 +1,21 @@
+// Operator precedence and associativity. The value of main becomes the exit code.
+
+fun putint(n)
+fun putstr(s)
+
+fun show(n) =
+    putint(n);
+    putstr("\n");
+
+fun main() =
+    show(2 + 3 * 4);
+    show((2 + 3) * 4);
+    show(10 - 3 - 2);
+    show(100 / 5 / 2);
+    show(17 / 5);
+    show(17 % 5);
+    show(-7 + 2);
+    show(!0);
+    show(3 < 4 && 4 < 3);
+    show(3 < 4 || 4 < 3);
+    6 * 7;

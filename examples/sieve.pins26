@@ -1,0 +1,39 @@
+// Sieve of Eratosthenes on a global array. Elements are 4 bytes wide, ^ before
+// a name takes its address and ^ after an expression reads through it.
+
+fun putint(n)
+fun putstr(s)
+
+var composite = 50 * 0
+
+fun mark_multiples(p) =
+    let
+        var m = 0
+    in
+        m = p * p;
+        while m < 50 do
+            (^composite + 4 * m)^ = 1;
+            m = m + p;
+        end;
+        0;
+    end;
+
+fun main() =
+    let
+        var i = 2
+        var printed = 0
+    in
+        while i < 50 do
+            if (^composite + 4 * i)^ == 0 then
+                if printed > 0 then
+                    putstr(" ");
+                end;
+                putint(i);
+                printed = printed + 1;
+                mark_multiples(i);
+            end;
+            i = i + 1;
+        end;
+        putstr("\n");
+        0;
+    end;

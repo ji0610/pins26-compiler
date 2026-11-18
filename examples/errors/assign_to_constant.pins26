@@ -1,0 +1,4 @@
+// The left side of an assignment has to be a place in memory.
+fun main() =
+    1 = 2;
+    0;

@@ -1,0 +1,8 @@
+// Assigns to a variable that was never defined.
+fun main() =
+    let
+        var x = 1
+    in
+        y = x + 2;
+        0;
+    end;

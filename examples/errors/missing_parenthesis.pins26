@@ -1,0 +1,8 @@
+// The opening parenthesis is never closed.
+fun main() =
+    let
+        var x = 1
+    in
+        x = (x + 2;
+        0;
+    end;

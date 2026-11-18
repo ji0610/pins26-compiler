@@ -1,0 +1,6 @@
+bin/
+out/
+.idea/
+*.iml
+*.class
+*.zip

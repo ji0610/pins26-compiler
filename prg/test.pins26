@@ -1,0 +1,8 @@
+fun putint(x)
+
+fun main() =
+    let
+        var x = 6
+    in
+        putint(x * 7);
+    end;

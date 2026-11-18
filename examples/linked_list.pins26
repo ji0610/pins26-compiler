@@ -1,0 +1,55 @@
+// A linked list on the heap, reversed in place. A node is two words: the value
+// and the address of the next node, with 0 marking the end.
+
+fun putint(n)
+fun putstr(s)
+fun new(size)
+
+fun prepend(list, value) =
+    let
+        var node = 0
+    in
+        node = new(8);
+        node^ = value;
+        (node + 4)^ = list;
+        node;
+    end;
+
+fun reverse(list) =
+    let
+        var previous = 0
+        var next = 0
+    in
+        while list != 0 do
+            next = (list + 4)^;
+            (list + 4)^ = previous;
+            previous = list;
+            list = next;
+        end;
+        previous;
+    end;
+
+fun print_list(list) =
+    while list != 0 do
+        putint(list^);
+        list = (list + 4)^;
+        if list != 0 then
+            putstr(" ");
+        end;
+    end;
+    putstr("\n");
+
+fun main() =
+    let
+        var list = 0
+        var i = 1
+    in
+        while i <= 5 do
+            list = prepend(list, i);
+            i = i + 1;
+        end;
+        print_list(list);
+        list = reverse(list);
+        print_list(list);
+        0;
+    end;

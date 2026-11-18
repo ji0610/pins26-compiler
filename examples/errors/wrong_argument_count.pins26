@@ -1,0 +1,6 @@
+// Calls a function of one parameter with two arguments.
+fun twice(n) =
+    n * 2;
+
+fun main() =
+    twice(1, 2);

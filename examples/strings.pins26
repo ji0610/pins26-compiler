@@ -1,0 +1,47 @@
+// Strings are zero-terminated, with one 4-byte word per character.
+
+fun putint(n)
+fun putstr(s)
+
+fun length(s) =
+    let
+        var n = 0
+    in
+        while (s + 4 * n)^ != 0 do
+            n = n + 1;
+        end;
+        n;
+    end;
+
+fun put_char(c) =
+    let
+        var text = 2 * 0
+    in
+        (^text)^ = c;
+        putstr(^text);
+    end;
+
+fun put_reversed(s) =
+    let
+        var i = 0
+    in
+        i = length(s) - 1;
+        while i >= 0 do
+            put_char((s + 4 * i)^);
+            i = i - 1;
+        end;
+        putstr("\n");
+    end;
+
+fun main() =
+    let
+        var word = 0
+    in
+        word = "compiler";
+        putstr(word);
+        putstr("\n");
+        putint(length(word));
+        putstr("\n");
+        put_reversed(word);
+        0;
+    end;

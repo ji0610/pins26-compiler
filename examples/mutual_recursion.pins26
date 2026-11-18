@@ -1,0 +1,32 @@
+// Two functions that call each other. is_odd is used before it is defined.
+
+fun putint(n)
+fun putstr(s)
+
+fun is_even(n) =
+    let
+        var result = 1
+    in
+        if n != 0 then
+            result = is_odd(n - 1);
+        end;
+        result;
+    end;
+
+fun is_odd(n) =
+    let
+        var result = 0
+    in
+        if n != 0 then
+            result = is_even(n - 1);
+        end;
+        result;
+    end;
+
+fun main() =
+    putint(is_even(10));
+    putint(is_even(7));
+    putint(is_odd(7));
+    putint(is_odd(10));
+    putstr("\n");
+    0;

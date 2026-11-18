@@ -1,0 +1,27 @@
+// Inner functions reach the parameters and variables of the functions around
+// them, here across two levels.
+
+fun putint(n)
+fun putstr(s)
+
+fun outer(a) =
+    let
+        var total = 0
+        fun add(b) =
+            let
+                fun bump() =
+                    total = total + a + b;
+                    total;
+            in
+                bump();
+            end;
+    in
+        add(1);
+        add(2);
+        total;
+    end;
+
+fun main() =
+    putint(outer(10));
+    putstr("\n");
+    0;

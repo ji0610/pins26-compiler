@@ -1,0 +1,8 @@
+// Defines the same name twice in one scope.
+fun main() =
+    let
+        var x = 1
+        var x = 2
+    in
+        x;
+    end;
